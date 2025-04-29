@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@layer components {
+	
+	*{
+font-family: "Lexend", serif;
+font-optical-sizing: auto;
+font-style: normal;
+color:#fff;
+	}
+
+
+#container{
+	background:black;
+}
+
+#showUser{
+	color:#000;
+}
+
+#msg{
+	background:rgba(227, 227, 227, 0.19);
+	color:#fff;
+}
+
+#write{
+	background:white;
+	color:red;
+}
+
+}
