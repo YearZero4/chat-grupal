@@ -57,7 +57,7 @@ console.log(`${localStorage.getItem('token')} ${token}`);
 if(localStorage.getItem('token') === token){
 	 msgShow0 += `<div class="flex gap-4 items-center justify-end"><div class="bg-blue-500 flex gap-2 rounded-sm"><span id="showUser" class="pl-2 bg-gray-300 pr-2 font-bold text-xs">${user} </span><span class="flex text-white pr-2 items-center text-sm">${msg}</span></div></div>`;
 	} else {
-    msgShow0 += `<div class="flex  items-center"><div class="flex gap-2"><div class="bg-gray-200 rounded-sm pr-2 flex"> <span id="showUser" class="font-bold text-xs bg-blue-500 pr-2 pl-2">${user} </span><span class="flex pl-2 text-black items-center text-sm ">${msg}</span></div></div>`;
+    msgShow0 += `<div class="flex  items-center"><div class="flex gap-2"><div class="bg-gray-200 rounded-sm pr-2 flex"> <span id="showUser" class="flex items-center font-bold text-xs bg-blue-500 pr-2 pl-2">${user} </span><span class="flex pl-2 text-black items-center text-sm ">${msg}</span></div></div>`;
    }
     msgShow0 += ``;
 }
