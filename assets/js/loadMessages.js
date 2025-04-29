@@ -69,7 +69,7 @@ if(localStorage.getItem('token') === token){
 
 document.addEventListener("DOMContentLoaded", () => {
 	loadMessages();
-	const ws = new WebSocket(`ws://${window.location.host}`);
+	const ws = new WebSocket("wss://chat-grupal.onrender.com");
 
 	ws.onmessage = (event) => {
 		const message = JSON.parse(event.data);
