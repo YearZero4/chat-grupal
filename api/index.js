@@ -8,11 +8,11 @@ const port = 2021;
 const css = path.join(__dirname, '../assets/css');
 const app = express();
 
-// Middlewares
+
 app.use(express.static(path.join(__dirname, '../assets/public')));
 app.use(express.static(css));
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json()); // Añadir para parsear JSON
+app.use(express.json()); 
 app.use(cors());
 
 const images = path.join(__dirname, '../assets/images');
@@ -29,14 +29,11 @@ const DBConfig = {
   port: 3306
 };
 
-// Crear servidor HTTP y WebSocket
 const server = app.listen(port, () => {
   console.log(`Servicio corriendo en el puerto => ${port}`);
 });
 
 const wss = new WebSocket.Server({ server });
-
-// Mantener track de todos los clientes conectados
 const clients = new Set();
 
 wss.on('connection', (ws) => {
@@ -47,7 +44,6 @@ wss.on('connection', (ws) => {
   });
 });
 
-// Función para broadcastear mensajes a todos los clientes
 function broadcastMessage(message) {
   const data = JSON.stringify(message);
   clients.forEach(client => {
@@ -80,7 +76,6 @@ async function obtenerTodos() {
   }
 }
 
-// Endpoint para enviar mensajes
 app.post('/send', async (req, res) => {
   try {
     const user = req.body.username1 || req.body.user;
